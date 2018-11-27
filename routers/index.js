@@ -8,7 +8,6 @@ module.exports = (app) => {
     .forEach((file) => {
       const router = require(path.join(__dirname, file))
       const filename = file.split('.')
-      console.log(filename)
       app.use('/' + filename[0], router)
     })
   app.get('/', (req, res) => {
